@@ -166,6 +166,7 @@ public class SigninPage extends JPanel {
                 users.add(Util.admin);
             }
             try {
+
                 user = getDataFormular();
                 if (user != null){
                     if (!userDAO.userExists(user.getUsername(), user.getEmail())){

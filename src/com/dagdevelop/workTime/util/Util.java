@@ -5,6 +5,7 @@ import com.dagdevelop.workTime.model.User;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -52,7 +53,11 @@ public class Util {
             "Swazie", "Syrienne", "Tadjike", "Tanzanienne", "Tchadienne", "Tchèque", "Thaïlandaise", "Togolaise", "Tonguienne", "Trinidadienne", "Tunisienne", "Turkmène", "Turque", "Tuvaluane",
             "Ukrainienne", "Uruguayenne", "Vanuatuane", "Vaticane", "Vénézuélienne", "Vietnamienne", "Yéménite", "Zambienne", "Zimbabwéenne"
     };
-    public static String RACINE_DIRECTORY = "C:/WorkTime_1.0";
+    private static String RACINE_PC;
+    static {
+        RACINE_PC = new File("C:/").exists() ? "C:/" : "/";
+    }
+    public static String RACINE_DIRECTORY = RACINE_PC + "WorkTime_1.0";
     public static String USER_FILE = "/users_infos.txt";
     public static String ACTIVITY_FILE = "/activities_data";
     public static User admin = new User("vially418", "Vially", "Dag", "Jesuis418", "dagdevelopper@gmail.com", "Cameroun", "Camerounais", "Homme", true);
